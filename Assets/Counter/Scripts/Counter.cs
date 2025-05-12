@@ -27,16 +27,19 @@ public class Counter : MonoBehaviour
         {
             Count1 += 1;
             Toy1Text.text = "Count : " + Count1;
+            other.gameObject.SetActive(false); // Deactivate the toy after counting
         }
         if (other.gameObject.CompareTag("Toy2"))
         {
             Count2 += 1;
             Toy2Text.text = "Count : " + Count2;
+            other.gameObject.SetActive(false); // Deactivate the toy after counting
         }
         if (other.gameObject.CompareTag("Toy3"))
         {
             Count3 += 1;
             Toy3Text.text = "Count : " + Count3;
+            other.gameObject.SetActive(false); // Deactivate the toy after counting
         }
     }
 }
