@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5082578847140900278}
   - component: {fileID: 2780065600371840580}
   - component: {fileID: 9003971852239067850}
+  - component: {fileID: -447151326009404750}
   m_Layer: 0
   m_Name: Toy2
   m_TagString: Toy2
@@ -133,3 +134,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-447151326009404750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735485417491997262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e3ea95c89ce21d468fe47d109953e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
