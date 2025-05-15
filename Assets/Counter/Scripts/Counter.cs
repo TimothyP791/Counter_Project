@@ -10,9 +10,9 @@ public class Counter : MonoBehaviour
     public Text Toy2Text;
     public Text Toy3Text;
 
-    private int Count1 = 0;
-    private int Count2 = 0;
-    private int Count3 = 0;
+    public int Count1 = 0;
+    public int Count2 = 0;
+    public int Count3 = 0;
 
     private void Start()
     {
