@@ -6,39 +6,31 @@ using UnityEngine.UI;
 
 public class Counter : MonoBehaviour
 {
-    public Text Toy1Text;
-    public Text Toy2Text;
-    public Text Toy3Text;
-
-    public int Count1 = 0;
-    public int Count2 = 0;
-    public int Count3 = 0;
+    public GameManager gameManagerScript;
 
     private void Start()
     {
-        Count1 = 0;
-        Count2 = 0;
-        Count3 = 0;
+        gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Toy1"))
         {
-            Count1 += 1;
-            Toy1Text.text = "Count : " + Count1;
+            gameManagerScript.Count1 += 1;
+            gameManagerScript.Toy1Text.text = "Count : " + gameManagerScript.Count1;
             other.gameObject.SetActive(false); // Deactivate the toy after counting
         }
         if (other.gameObject.CompareTag("Toy2"))
         {
-            Count2 += 1;
-            Toy2Text.text = "Count : " + Count2;
+            gameManagerScript.Count2 += 1;
+            gameManagerScript.Toy2Text.text = "Count : " + gameManagerScript.Count2;
             other.gameObject.SetActive(false); // Deactivate the toy after counting
         }
         if (other.gameObject.CompareTag("Toy3"))
         {
-            Count3 += 1;
-            Toy3Text.text = "Count : " + Count3;
+            gameManagerScript.Count3 += 1;
+            gameManagerScript.Toy3Text.text = "Count : " + gameManagerScript.Count3;
             other.gameObject.SetActive(false); // Deactivate the toy after counting
         }
     }

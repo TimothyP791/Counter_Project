@@ -3246,12 +3246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ac8d9e0f1d21044ab42710ee10b3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Toy1Text: {fileID: 598753586}
-  Toy2Text: {fileID: 705324602}
-  Toy3Text: {fileID: 433859459}
-  Count1: 0
-  Count2: 0
-  Count3: 0
+  gameManagerScript: {fileID: 1006818456}
 --- !u!65 &819539208
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3690,6 +3685,12 @@ MonoBehaviour:
   xRangeHigh: 5
   xRangeLow: -32
   zRange: 20
+  Toy1Text: {fileID: 598753586}
+  Toy2Text: {fileID: 705324602}
+  Toy3Text: {fileID: 433859459}
+  Count1: 0
+  Count2: 0
+  Count3: 0
   StartButton: {fileID: 265012601}
   TitleScreen: {fileID: 349436481}
   GameOverScreen: {fileID: 608472503}
@@ -4157,7 +4158,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1465705445}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1006818456}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1465705445
 MonoBehaviour:
   m_ObjectHideFlags: 0

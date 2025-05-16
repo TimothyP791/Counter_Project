@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class GameManager : MonoBehaviour
     public float xRangeHigh = 5;
     public float xRangeLow = -32;
     public float zRange = 20;
+    public Text Toy1Text;
+    public Text Toy2Text;
+    public Text Toy3Text;
+    public int Count1 = 0;
+    public int Count2 = 0;
+    public int Count3 = 0;
     public Button StartButton;
     public GameObject TitleScreen;
     public GameObject GameOverScreen;
@@ -22,18 +29,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        counterScript = GameObject.Find("Counting Text").GetComponent<Counter>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-       /*if (counterScript.Count1 + counterScript.Count2 + counterScript.Count3 >= 10)
+       if (Count1 + Count2 + Count3 >= 10)
         {
             GameOverScreen.SetActive(true);
             CountingText.SetActive(false);
             //Time.timeScale = 0; // Pause the game
-        }*/
+        }
     }
 
     void SpawnRandomToys()
@@ -56,5 +63,10 @@ public class GameManager : MonoBehaviour
         }
         TitleScreen.SetActive(false);
         CountingText.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
