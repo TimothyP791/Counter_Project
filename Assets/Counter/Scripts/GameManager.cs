@@ -19,27 +19,31 @@ public class GameManager : MonoBehaviour
     public int Count1 = 0;
     public int Count2 = 0;
     public int Count3 = 0;
+    public ObjectPooler objectPoolerScript;
     public Button StartButton;
     public GameObject TitleScreen;
     public GameObject GameOverScreen;
     public GameObject CountingText;
-    public Counter counterScript;
+    public AudioClip gameCompleteSound;
 
+    private AudioSource gameAudio;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        objectPoolerScript = GameObject.Find("GameManager").GetComponent<ObjectPooler>();
+        gameAudio = gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (Count1 + Count2 + Count3 >= 10)
+       if (Count1 + Count2 + Count3 >= objectPoolerScript.amountToPool)
         {
             GameOverScreen.SetActive(true);
             CountingText.SetActive(false);
             //Time.timeScale = 0; // Pause the game
+            gameAudio.PlayOneShot(gameCompleteSound, 0.5f);
         }
     }
 
@@ -57,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < objectPoolerScript.amountToPool; i++)
         {
             SpawnRandomToys();
         }
